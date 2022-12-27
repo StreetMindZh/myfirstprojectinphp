@@ -31,10 +31,11 @@
             display: flex;
         }
 
-        .menu{
+        .menu {
             width: 20%;
+            background-color: #746CF5;
         }
-        .content{
+        .content {
             width: 80%;
         }
     </style>
