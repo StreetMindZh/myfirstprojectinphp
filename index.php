@@ -15,10 +15,12 @@
 
     <!--Start CSS Internal-->
     <style>
+
         body {
             font-family: 'Ubuntu', sans-serif;
             background-color: #EAEDF8;
         }
+
         .footer {
             padding: 100px;
             text-align: center;
@@ -34,11 +36,28 @@
         .menu {
             width: 20%;
             background-color: #746CF5;
+            margin-right: 32px;
         }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 8px;
+
+        }
+
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+
+        }
+
         .content {
             width: 80%;
         }
+
     </style>
+
     <!--End CSS Internal-->
 
 </head>
@@ -47,11 +66,11 @@
     <div class="main">
     <!--Start Navigation-->
     <div class="menu">
-        <a href="index.php?page=start">Start</a> |
-        <a href="index.php?page=aboutus">AboutUs</a> |
-        <a href="index.php?page=products">Products</a> |
-        <a href="index.php?page=contacts">Contacts</a> |
-        <a href="index.php?page=addcontact">Add Contact</a> |
+        <a href="index.php?page=start">Start</a> 
+        <a href="index.php?page=aboutus">AboutUs</a> 
+        <a href="index.php?page=products">Products</a> 
+        <a href="index.php?page=contacts">Contacts</a> 
+        <a href="index.php?page=addcontact">Add Contact</a> 
         <a href="index.php?page=legal">Imprint</a>
     </div>
     <!--End Navigation-->
