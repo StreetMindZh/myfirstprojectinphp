@@ -17,6 +17,7 @@
     <style>
         body {
             font-family: 'Ubuntu', sans-serif;
+            background-color: #EAEDF8;
         }
         .footer {
             padding: 100px;
