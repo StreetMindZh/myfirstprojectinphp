@@ -25,7 +25,17 @@
             background-color: #343434;
             color: white;
             margin-top: 300px;
+        }
 
+        .main{
+            display: flex;
+        }
+
+        .menu{
+            width: 20%;
+        }
+        .content{
+            width: 80%;
         }
     </style>
     <!--End CSS Internal-->
@@ -33,15 +43,19 @@
 </head>
 <body>
 
+    <div class="main">
     <!--Start Navigation-->
-    <div>
+    <div class="menu">
         <a href="index.php?page=start">Start</a> |
         <a href="index.php?page=aboutus">AboutUs</a> |
         <a href="index.php?page=products">Products</a> |
         <a href="index.php?page=contacts">Contacts</a> |
         <a href="index.php?page=addcontact">Add Contact</a> |
         <a href="index.php?page=legal">Imprint</a>
-        </div>
+    </div>
+    <!--End Navigation-->
+    <!--Start PHP-->
+    <div class="content">
 
         <!--End Navigation-->
 
@@ -103,8 +117,10 @@
 
         ?>
 
+    </div>
+    <!--End PHP-->
+    </div>
     <!--Start Footer-->        
-
     <div class="footer">
 
        (c) 2022 Developer StreetMindz.com "the pro art inc"         
