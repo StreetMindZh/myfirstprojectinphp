@@ -19,6 +19,7 @@
         body {
             font-family: 'Ubuntu', sans-serif;
             background-color: #EAEDF8;
+            margin: 0;
         }
 
         .footer {
@@ -37,6 +38,7 @@
             width: 20%;
             background-color: #746CF5;
             margin-right: 32px;
+            padding-top: 150px;
         }
 
         .menu a {
@@ -66,12 +68,12 @@
     <div class="main">
     <!--Start Navigation-->
     <div class="menu">
-        <a href="index.php?page=start">Start</a> 
-        <a href="index.php?page=aboutus">AboutUs</a> 
-        <a href="index.php?page=products">Products</a> 
-        <a href="index.php?page=contacts">Contacts</a> 
-        <a href="index.php?page=addcontact">Add Contact</a> 
-        <a href="index.php?page=legal">Imprint</a>
+        <a href="index.php?page=start"><img src="img/home.svg" alt="home icon"> Start</a> 
+        <a href="index.php?page=aboutus"><img src="img/aboutus.svg" alt="">AboutUs</a> 
+        <a href="index.php?page=products"><img src="img/products.svg" alt="">Products</a> 
+        <a href="index.php?page=contacts"><img src="img/contacts.svg" alt="">Contacts</a> 
+        <a href="index.php?page=addcontact"><img src="img/addcontact.svg" alt="">Add Contact</a> 
+        <a href="index.php?page=legal"><img src="img/imprint.svg" alt="">Imprint</a>
     </div>
     <!--End Navigation-->
     <!--Start PHP-->
