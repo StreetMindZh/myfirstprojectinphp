@@ -84,6 +84,8 @@
             box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
             padding-left: 50px;
             display: flex;
+            justify-content: space-between;
+
 
         }
 
@@ -95,6 +97,14 @@
             height: 24px;
             display: flex;
             justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+
+        }
+
+        .myname{
+            display: flex;
+            margin-right: 50px;
             align-items: center;
         }
 
@@ -108,7 +118,7 @@
 <div class="menubar">
         <h1>My Contact Book</h1>
 
-            <div>
+            <div class="myname">
                <div class="avatar">Z</div> Zlatko Jankovski
             </div>
 
