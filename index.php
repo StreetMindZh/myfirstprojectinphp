@@ -142,6 +142,13 @@
         <?php
 
             $headline = 'Welcome';
+            $contacts = [];
+
+            if(isset($_POST['name']) && isset($_POST['phone'])){
+
+                echo 'Contact <b>' . $_POST['name'] . ' </b> has been added';
+
+            }
 
             if($_GET['page'] == 'contacts'){
                 $headline = 'Your Contacts';
