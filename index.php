@@ -178,19 +178,25 @@
             } else  if ($_GET['page'] == 'addcontact'){
 
 
-                <div>
-                echo 'add new contact';
-                </div>
+            echo "
 
             <div>
-            <input placeholder='Enter Name' name='name'>
+                add new contact
+            </div>
+
+            <form action='?page=contacts' method='POST'>
+            <div>
+                <input placeholder='Enter your Name' name='name'>
             </div>
 
             <div>
-            <input placeholder='Phonenumber' name='phone'>
+                <input placeholder='Phonenumber' name='phone'>
             </div>
 
             <button type='submit'>Send</button>
+
+            </form>
+            ";
 
             } else  if ($_GET['page'] == 'products'){
 
