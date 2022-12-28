@@ -147,6 +147,12 @@
             if(isset($_POST['name']) && isset($_POST['phone'])){
 
                 echo 'Contact <b>' . $_POST['name'] . ' </b> has been added';
+                $newCoontact = [
+                    'name' => $_POST['name'],
+                    'phone' => $_POST['phone']
+                ];
+                arrey_push($contacts, $newContact);
+                file_put_contents('contacts.txt', json_encode($contacts));
 
             }
 
