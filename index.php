@@ -177,7 +177,12 @@
 
             } else  if ($_GET['page'] == 'addcontact'){
 
+                
+                <div>
                 echo 'add new contact';
+                </div>
+
+            <input>
 
             } else  if ($_GET['page'] == 'products'){
 
