@@ -65,6 +65,13 @@
         .content {
             width: 80%;
             margin-top: 120px;
+            margin-right: 32px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+
+
         }
 
         .menubar {
@@ -74,8 +81,21 @@
             right: 0;
             top: 0;
             height: 80px;
-            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0, 0.1);
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            padding-left: 50px;
+            display: flex;
 
+        }
+
+        .avatar{
+            border-radius: 100%;
+            background-color: yellowgreen;
+            padding: 16px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
     </style>
@@ -86,7 +106,11 @@
 <body>
 
 <div class="menubar">
+        <h1>My Contact Book</h1>
 
+            <div>
+               <div class="avatar">Z</div> Zlatko Jankovski
+            </div>
 
 </div>
     <div class="main">
