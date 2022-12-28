@@ -74,6 +74,7 @@
             right: 0;
             top: 0;
             height: 80px;
+            box-shadow: 2px 2px 2px rgba(0, 255, 255, 255, 0.1);
 
         }
 
