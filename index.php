@@ -64,6 +64,17 @@
 
         .content {
             width: 80%;
+            margin-top: 120px;
+        }
+
+        .menubar {
+            background-color: white;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 80px;
+
         }
 
     </style>
@@ -73,6 +84,10 @@
 </head>
 <body>
 
+<div class="menubar">
+
+
+</div>
     <div class="main">
     <!--Start Navigation-->
     <div class="menu">
