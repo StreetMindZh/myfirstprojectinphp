@@ -151,6 +151,7 @@
                     'name' => $_POST['name'],
                     'phone' => $_POST['phone']
                 ];
+                
                 arrey_push($contacts, $newContact);
                 file_put_contents('contacts.txt', json_encode($contacts));
 
