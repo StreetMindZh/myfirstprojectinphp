@@ -144,18 +144,46 @@
             $headline = 'Welcome';
             $contacts = [];
 
+            //frage ist variable gesetzt?
             if(isset($_POST['name']) && isset($_POST['phone'])){
-
                 echo 'Contact <b>' . $_POST['name'] . ' </b> has been added';
-                $newCoontact = [
+                $newContact = [
                     'name' => $_POST['name'],
                     'phone' => $_POST['phone']
                 ];
-                
-                arrey_push($contacts, $newContact);
+                array_push($contacts, $newContact);
                 file_put_contents('contacts.txt', json_encode($contacts));
-
+                header('Location: index.php?page=contacts');
+                exit;
             }
+            
+            // try to get contacts.txt working 
+           /*
+            touch('contacts.txt');
+
+            $file = fopen('contacts.txt', 'w');
+            if ($file !== false) {
+              // The file was successfully opened for writing
+            } else {
+              // There was an error opening the file
+            }
+
+            if (file_exists('contacts.txt')) {
+                // The file exists and is writable
+              } else {
+                // The file doesn't exist or is not writable
+              }
+              
+            
+            if(is_writable('contacts.txt')){
+                // The file is writable
+            } else {
+                // The file is not writable
+            }
+            
+            chmod('contacts.txt', 0777);
+
+            */
 
             if($_GET['page'] == 'contacts'){
                 $headline = 'Your Contacts';
@@ -193,23 +221,22 @@
 
 
             echo "
+                <div>
+                    add new contact
+                </div>
 
-            <div>
-                add new contact
-            </div>
+                <form action='?page=contacts' method='POST'>
+                    <div>
+                        <input placeholder='Enter your Name' name='name'>
+                    </div>
 
-            <form action='?page=contacts' method='POST'>
-            <div>
-                <input placeholder='Enter your Name' name='name'>
-            </div>
+                    <div>
+                        <input placeholder='Phonenumber' name='phone'>
+                    </div>
 
-            <div>
-                <input placeholder='Phonenumber' name='phone'>
-            </div>
+                    <button type='submit'>Send</button>
 
-            <button type='submit'>Send</button>
-
-            </form>
+                </form>
             ";
 
             } else  if ($_GET['page'] == 'products'){
