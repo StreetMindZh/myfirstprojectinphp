@@ -144,19 +144,31 @@
             $headline = 'Welcome';
             $contacts = [];
 
+            if(file_exists('contacts.txt')){
+                $text = file_get_contents('contacts.txt', true);
+                $contacts = json_decoode($text);
+
+            }
+
             //frage ist variable gesetzt?
             if(isset($_POST['name']) && isset($_POST['phone'])){
-                echo 'Contact <b>' . $_POST['name'] . ' </b> has been added';
+                echo 'Contact <b>' . $_POST['name'] . '</b> has been added';
                 $newContact = [
                     'name' => $_POST['name'],
                     'phone' => $_POST['phone']
                 ];
+               
                 array_push($contacts, $newContact);
+                chmod('.', 0777);
                 file_put_contents('contacts.txt', json_encode($contacts));
+
+                 /*
                 header('Location: index.php?page=contacts');
                 exit;
+                 */
             }
-            
+           
+
             // try to get contacts.txt working 
            /*
             touch('contacts.txt');
