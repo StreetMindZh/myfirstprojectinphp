@@ -30,7 +30,6 @@
 
       <!--Start Integrate Header PHP -->
 
-    <?php include "includes/tools.php"; ?>
     <?php include "includes/header.php"; ?>
 
      <!--End Integrate Header PHP -->
@@ -79,7 +78,7 @@
                 
             }
            
-            
+
 
             if($_GET['page'] == 'contacts'){
                 $headline = 'Your Contacts';

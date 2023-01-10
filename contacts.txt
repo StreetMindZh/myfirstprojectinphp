@@ -1,1 +1,1 @@
-[{"name":"twest","phone":"9896894869"},{"name":"","phone":""},{"name":"","phone":""},{"name":"","phone":""},{"name":"","phone":""},{"name":"","phone":""},{"name":"","phone":""},{"name":"","phone":""},{"name":"Zlatko","phone":"22222"},{"name":"zzzz","phone":"0000000"},{"name":"sdfya","phone":"asdf"}]
+[{"name":"twest","phone":"9896894869"},{"name":"","phone":""},{"name":"","phone":""},{"name":"","phone":""},{"name":"","phone":""}]
