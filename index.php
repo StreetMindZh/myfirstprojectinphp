@@ -129,70 +129,10 @@
                         <input placeholder='Phonenumber' name='phone'>
                     </div>
 
-                    <div>
-                    <input placeholder='E-Mail' type='text' id='email' name='email'><br>
-                    </div>    
-                    
-                    <div>
-                    <p><br>Geht es dir heute gut?</p>
-
-                    <input type='radio' id='ja' name='radio-mood' value='ja'>
-                    <label for='ja'>Ja</label><br>
-                    <input type='radio' id='nein' name='radio-mood' value='nein'>
-                    <label for='nein'>Nein</label><br><br>
-                    </div>  
-
-                    <div>
-                        <p>What colors does the Swiss flag have?</p>
-                        <input type='checkbox' id='color1' name='color-red' value='red'>
-                        <label for='color1'>Red</label><br>
-                        <input type='checkbox' id='color2' name='color-yellow' value='yellow'>
-                        <label for='color2'>Yellow</label><br>
-                        <input type='checkbox' id='color3' name='color-blue' value='blue'>
-                        <label for='color3'>Blue</label><br>
-                        <input type='checkbox' id='color4' name='color-white' value='white'>
-                        <label for='color4'>White</label><br><br>
-                    </div>
-                    
-                    <script>
-                    function limitCheckboxes() {
-                        var checkboxes = document.querySelectorAll('input[type=checkbox]');
-                        var checkedCount = 0;
-                        var lastChecked;
-                        
-                        for (var i = 0; i < checkboxes.length; i++) {
-                          checkboxes[i].addEventListener('change', function() {
-                            checkedCount = 0;
-                            for (var j = 0; j < checkboxes.length; j++) {
-                              if (checkboxes[j].checked) {
-                                checkedCount++;
-                                lastChecked = checkboxes[j];
-                              }
-                            }
-                            
-                            if (checkedCount > 2) {
-                              lastChecked.checked = false;
-                            }
-                          });
-                        }
-                      }
-                      
-                      limitCheckboxes();
-                      
-                      
-                      
-                      
-                            </script>
-
                     <button type='submit'>Send</button>
-
-                    
-                    
 
                 </form>
             ";
-
-          
 
             } else  if ($_GET['page'] == 'products'){
 

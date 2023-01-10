@@ -1,26 +1,94 @@
-<!-- FORMULAR -->
-<form action="result.php" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br>
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email"><br>
+$headline = 'Welcome';
+            $contacts = [];
 
-    <p>Geht es dir heute gut?</p>
-    <input type="radio" id="ja" name="radio-mood" value="ja">
-    <label for="ja">Ja</label><br>
-    <input type="radio" id="nein" name="radio-mood" value="nein">
-    <label for="nein">Nein</label><br><br>
+            if(file_exists('contacts.txt')){
+                $text = file_get_contents('contacts.txt', true);
+                $contacts = json_decode($text);
 
-    <p>Welche Farben hat die Schweizer Fahne?</p>
-    <input type="checkbox" id="color1" name="color-red" value="rot">
-    <label for="color1">Rot</label><br>
-    <input type="checkbox" id="color2" name="color-yellow" value="gelb">
-    <label for="color2">Gelb</label><br>
-    <input type="checkbox" id="color3" name="color-blue" value="blau">
-    <label for="color3">Blau</label><br>
-    <input type="checkbox" id="color4" name="color-white" value="weiss">
-    <label for="color4">Weiss</label><br><br>
+            }
 
-    <input type="submit" value="Abschicken">
-</form>
-<!-- END:FORMULAR -->
+            //frage ist variable gesetzt?
+            if(isset($_POST['name']) && isset($_POST['phone'])){
+                echo 'Contact <b>' . $_POST['name'] . '</b> has been added';
+                $newContact = [
+                    'name' => $_POST['name'],
+                    'phone' => $_POST['phone']
+                ];
+               
+                array_push($contacts, $newContact);
+                file_put_contents('contacts.txt', json_encode($contacts));
+
+                
+            }
+           
+
+
+            if($_GET['page'] == 'contacts'){
+                $headline = 'Your Contacts';
+            }
+            if($_GET['page'] == 'addcontact'){
+                $headline = 'Add Contact';
+            }
+            if($_GET['page'] == 'legal'){
+                $headline = 'Imprint';
+            }
+
+            if($_GET['page'] == 'aboutus'){
+                $headline = 'AboutUs';
+            }
+
+            if($_GET['page'] == 'products'){
+                $headline = 'Products';
+            }
+
+            echo '<h1>' . $headline . '</h1>';
+
+            if($_GET['page'] == 'contacts'){
+
+                echo "
+                
+                <p>On this site is a overview of your <b>contacts</b></p>
+                
+                ";
+
+            } else  if ($_GET['page'] == 'aboutus'){
+
+                echo 'get known who we are';
+
+            } else  if ($_GET['page'] == 'addcontact'){
+
+
+            echo "
+                <div>
+                    add new contact
+                </div>
+
+                <form action='?page=contacts' method='POST'>
+                    <div>
+                        <input placeholder='Enter your Name' name='name'>
+                    </div>
+
+                    <div>
+                        <input placeholder='Phonenumber' name='phone'>
+                    </div>
+
+                    <button type='submit'>Send</button>
+
+                </form>
+            ";
+
+            } else  if ($_GET['page'] == 'products'){
+
+                echo 'our product site';
+
+            } else  if ($_GET['page'] == 'legal'){
+
+                echo 'here is the Imprint of our Site';
+
+
+            } else {
+
+                echo 'you are on our start site';
+
+
+            }
