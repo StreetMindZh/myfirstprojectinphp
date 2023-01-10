@@ -111,9 +111,16 @@
             ";
 
             foreach ($contacts as $row){
+                $name = $row['name'];
+                $phone = $row['phone'];
+
                 echo "
                 <div class='card'>
                     <img class='profile-picture' src='img/profile-picture.png'>
+                    <b>$name</b><br>
+                    $phone
+
+
                 </div>
                 ";
             }
