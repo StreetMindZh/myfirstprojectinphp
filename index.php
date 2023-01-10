@@ -20,10 +20,12 @@
 
     <!--End Bootstrap CDN CSS and JavaScript Link-->
 
+     <!--Start CSS External-->
+
     <link rel="stylesheet" href="css/styles.css">
 
 
-    <!--End CSS Internal-->
+    <!--End CSS External-->
 
 </head>
 <body>
@@ -60,7 +62,7 @@
 
         if(file_exists('contacts.txt')){
             $text = file_get_contents('contacts.txt', true);
-            $contacts = json_decode($text);
+            $contacts = json_decode($text, true);
         }else{
             $contacts = array();
         }
@@ -77,10 +79,7 @@
             array_push($contacts, $newContact);
             file_put_contents('contacts.txt', json_encode($contacts, JSON_PRETTY_PRINT));
 
-
         }
-
-
 
 
         if($_GET['page'] == 'contacts'){
@@ -110,6 +109,14 @@
             <p>On this site is a overview of your <b>contacts</b></p>
             
             ";
+
+            foreach ($contacts as $row){
+                echo "
+                <div class='card'>
+                    <img class='profile-picture' src='img/profile-picture.png'>
+                </div>
+                ";
+            }
 
         } else  if ($_GET['page'] == 'aboutus'){
 
