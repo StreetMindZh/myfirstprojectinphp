@@ -6,6 +6,8 @@
             font-family: 'Ubuntu', sans-serif;
             background-color: #EAEDF8;
             margin: 0;
+            font-size: 11px;
+            align-items: center;
         }
 
         
@@ -125,3 +127,25 @@
             left: 8px;
         }
         /*Profile Picture End*/
+
+        .phonebtn{
+
+            background-color: #746CF5;
+            color: white;
+            font-weight: 900;
+            text-decoration: none;
+            padding: 4px;
+            border-radius: 4px;
+
+        }
+
+        .phonebtn:hover {
+
+            background-color: #1e822b;
+            color: rgb(176, 129, 129);
+            font-weight: 900;
+            text-decoration: none;
+            padding: 4px;
+            border-radius: 4px;
+
+        }
