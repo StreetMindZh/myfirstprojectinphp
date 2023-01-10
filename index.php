@@ -143,7 +143,7 @@
                     </div>  
 
                     <div>
-                        <p>What colors does the Swiss flag have?, You can only choose two colors.</p>
+                        <p>What colors does the Swiss flag have?</p>
                         <input type='checkbox' id='color1' name='color-red' value='red'>
                         <label for='color1'>Red</label><br>
                         <input type='checkbox' id='color2' name='color-yellow' value='yellow'>
