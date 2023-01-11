@@ -56,117 +56,95 @@
         <!--End Navigation-->
 
         <?php
+            $headline = 'Herzlich willkommen';
+            $contacts = [];
 
-        $headline = 'Welcome';
-        $contacts = [];
-
-        if(file_exists('contacts.txt')){
-            $text = file_get_contents('contacts.txt', true);
-            $contacts = json_decode($text, true);
-        }else{
-            $contacts = array();
-        }
-        
-
-        //frage ist variable gesetzt?
-        if(isset($_POST['name']) && isset($_POST['phone'])){
-            echo 'Contact <b>' . $_POST['name'] . '</b> has been added';
-            $newContact = [
-                'name' => $_POST['name'],
-                'phone' => $_POST['phone']
-            ];
-
-            array_push($contacts, $newContact);
-            file_put_contents('contacts.txt', json_encode($contacts, JSON_PRETTY_PRINT));
-
-        }
-
-
-        if($_GET['page'] == 'contacts'){
-            $headline = 'Your Contacts';
-        }
-        if($_GET['page'] == 'addcontact'){
-            $headline = 'Add Contact';
-        }
-        if($_GET['page'] == 'legal'){
-            $headline = 'Imprint';
-        }
-
-        if($_GET['page'] == 'aboutus'){
-            $headline = 'AboutUs';
-        }
-
-        if($_GET['page'] == 'products'){
-            $headline = 'Products';
-        }
-
-        echo '<h1>' . $headline . '</h1>';
-
-        if($_GET['page'] == 'contacts'){
-
-            echo "
-            
-            <p>On this site is a overview of your <b>contacts</b></p>
-            
-            ";
-
-            foreach ($contacts as $row){
-                $name = $row['name'];
-                $phone = $row['phone'];
-
-                echo "
-                <div class='card'>
-                    <img class='profile-picture' src='img/profile-picture.png'>
-                    <b>$name</b><br>
-                    $phone
-
-                    <a class='phonebtn' href='tel:$phone'>CALL TO</a>
-                </div>
-                ";
+            if (file_exists('contacts.txt')) {
+                $text = file_get_contents('contacts.txt', true);
+                $contacts = json_decode($text, true);
             }
 
-        } else  if ($_GET['page'] == 'aboutus'){
 
-            echo 'get known who we are';
+            if (isset($_POST['name']) && isset($_POST['phone'])) {
+                echo 'Kontakt <b>' . $_POST['name'] . '</b> wurde hinzugefügt';
+                $newContact = [
+                    'name' => $_POST['name'],
+                    'phone' => $_POST['phone']
+                ];
+                array_push($contacts, $newContact);
+                file_put_contents('contacts.txt', json_encode($contacts, JSON_PRETTY_PRINT));
+            }
 
-        } else  if ($_GET['page'] == 'addcontact'){
+            if ($_GET['page'] == 'delete') {
+                $headline = 'Kontakt gelöscht';
+            }
 
+            if ($_GET['page'] == 'contacts') {
+                $headline = 'Deine Kontakte';
+            }
 
-        echo "
-            <div>
-                add new contact
-            </div>
+            if ($_GET['page'] == 'addcontact') {
+                $headline = 'Kontakt hinzufügen';
+            }
 
-            <form action='?page=contacts' method='POST'>
-                <div>
-                    <input placeholder='Enter your Name' name='name'>
-                </div>
+            if ($_GET['page'] == 'legal') {
+                $headline = 'Impressum';
+            }
 
-                <div>
-                    <input placeholder='Phonenumber' name='phone'>
-                </div>
+            echo '<h1>' . $headline . '</h1>';
 
-                <button type='submit'>Send</button>
+            if ($_GET['page'] == 'delete') {
+                echo '<p>Dein Kontakt wurde gelöscht</p>';
+                # Wir laden die Nummer der Reihe aus den URL Parametern
+                $index = $_GET['delete']; 
 
-            </form>
-        ";
+                # Wir löschen die Stelle aus dem Array 
+                unset($contacts[$index]); 
 
-        } else  if ($_GET['page'] == 'products'){
+                # Tabelle erneut speichern in Datei contacts.txt
+                file_put_contents('contacts.txt', json_encode($contacts, JSON_PRETTY_PRINT));
+            } else if ($_GET['page'] == 'contacts') {
+                echo "
+                    <p>Auf dieser Seite hast du einen Überblick über deine <b>Kontakte</b></p>
+                ";
 
-            echo 'our product site';
+                foreach ($contacts as $index=>$row) {
+                    $name = $row['name'];
+                    $phone = $row['phone'];
 
-        } else  if ($_GET['page'] == 'legal'){
-
-            echo 'here is the Imprint of our Site';
-
-
-        } else {
-
-            echo 'you are on our start site';
-
-
-        }
-        ?>
+                    echo "
+                    <div class='card'>
+                        <img class='profile-picture' src='img/profile-picture.png'>
+                        <b>$name</b><br>
+                        $phone
+                        <a class='phonebtn' href='tel:$phone'>Anrufen</a>
+                        <a class='deletebtn' href='?page=delete&delete=$index'>Löschen</a>
+                    </div>
+                    ";
+                }
+            } else if ($_GET['page'] == 'legal') {
+                echo "
+                    Hier kommt das Impressum hin
+                ";
+            } else if ($_GET['page'] == 'addcontact') {
+                echo "
+                    <div>
+                        Auf dieser Seite kannst du einen weiteren Kontakt hinzufügen
+                    </div>
+                    <form action='?page=contacts' method='POST'>
+                        <div>
+                            <input placeholder='Name eingeben' name='name'>
+                        </div>
+                        <div>
+                            <input placeholder='Telefonnummer eingeben' name='phone'> 
+                        </div>
+                        <button type='Submit'>Absenden</button>
+                    </form>
+                ";
+            } else {
+                echo 'Du bist auf der Startseite!';
+            }
+            ?>
 
     </div>
     <!--End PHP-->
