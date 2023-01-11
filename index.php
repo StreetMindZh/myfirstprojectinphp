@@ -48,6 +48,9 @@
             <a href="index.php?page=contacts"><img src="img/contacts.svg" alt="contacts button">Contacts</a> 
             <a href="index.php?page=addcontact"><img src="img/addcontact.svg" alt="addcontact button">Add Contact</a> 
             <a href="index.php?page=legal"><img src="img/imprint.svg" alt="imprint button">Imprint</a>
+            <a href="index.php?page=list-all"><img src="img/imprint.svg" alt="list-all button">List All</a>
+            <a href="index.php?page=yonger-than-40"><img src="img/imprint.svg" alt="list-all-yonger-than-40 button">List All Yonger Than 40</a>
+            <a href="index.php?page=yonger-than-30-and-non-suisse"><img src="img/imprint.svg" alt="list-all-yonger-than-30-and-non-suisse button">List All Yonger Than 30 and non Suisse</a>
     </div>
     <!--End Navigation-->
     <!--Start PHP-->
@@ -91,6 +94,18 @@
                 $headline = 'Impressum';
             }
 
+            if ($_GET['page'] == 'list-all') {
+                $headline = 'List All';
+            }
+
+            if ($_GET['page'] == 'yonger-than-40') {
+                $headline = 'List All Yonger Than 40';
+            }
+
+            if ($_GET['page'] == 'yonger-than-30-and-non-suisse') {
+                $headline = 'List All Yonger Than 30 and non Suisse';
+            }
+
             echo '<h1>' . $headline . '</h1>';
 
             if ($_GET['page'] == 'delete') {
@@ -126,6 +141,24 @@
                 echo "
                     Hier kommt das Impressum hin
                 ";
+
+            } else if ($_GET['page'] == 'list-all') {
+                echo "
+                    Hier sind alle Kontakte die du hast
+                ";
+
+            } else if ($_GET['page'] == 'yonger-than-40') {
+                echo "
+                    Hier sind alle Kontakte die du hast, welche jünger als 40 sind
+                ";
+
+            } else if ($_GET['page'] == 'yonger-than-30-and-non-suisse') {
+                echo "
+                Hier sind alle Kontakte die du hast, welche jünger als 30 sind und nicht schweizer büriger
+                ";
+
+            
+            
             } else if ($_GET['page'] == 'addcontact') {
                 echo "
                     <div>
