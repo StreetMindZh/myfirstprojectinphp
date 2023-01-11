@@ -1,10 +1,10 @@
 [
     {
-        "name": "Zlatko",
-        "phone": "0041762456585"
+        "name": "test",
+        "phone": "0000000"
     },
     {
-        "name": "Domenica",
-        "phone": "0041765257028"
+        "name": "zaltooo",
+        "phone": "02020020202"
     }
 ]
